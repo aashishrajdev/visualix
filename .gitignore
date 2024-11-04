@@ -12,6 +12,11 @@
 /build
 
 # misc
+.env
+*.env
+.env*
+config.js   # if your API key is in this file
+secrets.*   # if your API key is in this file
 visualix\backend\.env
 .env
 .DS_Store
