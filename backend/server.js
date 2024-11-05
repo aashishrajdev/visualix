@@ -11,7 +11,8 @@ app.use(cors());
 const invokeUrl =
   "https://ai.api.nvidia.com/v1/genai/stabilityai/stable-diffusion-xl";
 
-const API_KEY = process.env.API_KEY;
+require("dotenv").config();
+const apiKey = process.env.API_KEY;
 
 app.use(express.json());
 
@@ -20,7 +21,7 @@ app.post("/generate-our-image-brotha", async (req, res) => {
   try {
     const response = await axios.post(invokeUrl, req.body, {
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer ${apiKey}`,
         Accept: "application/json",
       },
     });
